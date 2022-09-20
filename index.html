@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+
+    <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/style2.css">
+    <title>Buddies Tourlines</title>
+</head>
+<body>
+<section style="border-bottom: white; position: top;" id="home">
+  <nav class="fixed-top">
+    <input type="checkbox" id="check" >
+    <label for="check" class="checkbtn">
+      <div class="container1 " onclick="myFunction(this)">
+        <div class="bar1" id ="b1"></div>
+        <div class="bar2" id ="b2"></div>
+        <div class="bar3" id ="b3"></div>
+      </div>
+    </label>
+    <label class="logo mini"><a class="buddies" style="text-decoration: none; color:white;" href="#home" > Buddies Tourlines</a></label>
+    <ul class="mini" onclick="myFunction2(this)">
+      <li><a class="active" href="#home" > Home</a></li>
+      <li><a href="#About" id="menu" >About</a></li>
+      <li><a href="#Service" id="menu">Gallery</a></li>
+      <li><a href="#Gallery" id="menu">Services</a></li>
+      <li><a href="#Contact" id="menu">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <section class="showcase">
+    <video src="/static/videos/start.mp4" muted loop autoplay></video>
+    <div class="overlay"></div>
+    <div class="text">
+      <h2>Never Stop </h2> 
+      <h3>Exploring The World</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat.</p>
+      <a href="#">Plan a Trip</a>
+    </div>
+    <ul class="social">
+      <li><a href="#"><img src="https://i.ibb.co/x7P24fL/facebook.png"></a></li>
+      <li><a href="#"><img src="https://i.ibb.co/Wnxq2Nq/twitter.png"></a></li>
+      <li><a href="#"><img src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
+    </ul>
+  </section>    
+
+  
+  
+  
+  
+  
+<div class="Service page" id="about">About</div>
+  <div class="Service page" id="Service">Service</div>
+  <div class="Gallery page" id="Gallery">Gallery</div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="Contact page" id="Contact">
+    <div style="text-align:left;padding-left: 2rem; float:left;">
+      <address>
+        <p>Buddies Tourlines</p>
+        <p>Contact : 7894561230</p>
+        <p>Lorem ipsum dolor sit amet <br> adipisicing elit.<br> Reprehenderit, similique.</p>
+      </address>
+    </div>
+    <fieldset style="border:2px float:right">
+      <form action="/index" method="post">
+        {% csrf_token %}
+      <legend>Keep In Touch</legend>
+      <div style="margin:1rem"><label for="name">Name : </label>
+      <input type="text" name="name" id="name"></div>
+      <div style="margin:1rem"><label for="email">Email : </label>
+      <input type="email" name="email" id="email"></div>
+      <button type="submit">SUBMIT</button>
+      </form>
+    </fieldset>
+  </div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Optional JavaScript; choose one of the two! -->
+<script>
+
+  function myFunction(x) {
+    x.classList.toggle("change");
+  }
+  function myFunction2(x){
+    document.getElementById("check").checked = false;
+    const bar = document.querySelector("#menu");
+    bar.addEventListener("click",myFunction3);
+
+  }
+  function myFunction3(x){
+    const myStyles =`
+      width: 35px;
+      height: 5px;
+      background-color: #333;
+      margin: 6px 0;
+      transition: 0.4s;
+    `;
+    const element = document.querySelector('.bar1');
+    element.style.cssText = myStyles;
+    const element2 = document.querySelector('.bar2');
+    element2.style.cssText = myStyles;
+    const element3 = document.querySelector('.bar3');
+    element3.style.cssText = myStyles;
+  }
+  </script>
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+</body>
+</html>
